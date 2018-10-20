@@ -34,16 +34,16 @@ MCP iochip(1, 10);             // Instantiate an object called "iochip" on an MC
 
 void setup() {
   iochip.begin();
-  iochip.pinMode(0, HIGH);      // Use bit-write mode to set the pin as an input (inputs are logic level 1)
+  iochip.pinMode(0, INPUT);      // Use bit-write mode to set the pin as an input (inputs are logic level 1)
   iochip.pullupMode(0, HIGH);   // Use bit-write mode to Turn on the internal pull-up resistor on the pin
   iochip.inputInvert(0, HIGH);  // Use bit-write mode to invert the input so that logic 0 is read as HIGH
     
-  iochip.pinMode(2, HIGH);      // Use bit-write mode to set the pin as an input (inputs are logic level 1)
+  iochip.pinMode(2, INPUT);      // Use bit-write mode to set the pin as an input (inputs are logic level 1)
   iochip.pullupMode(2, HIGH);   // Use bit-write mode to Turn on the internal pull-up resistor on the pin
   iochip.inputInvert(2, HIGH);  // Use bit-write mode to invert the input so that logic 0 is read as HIGH
   
-  iochip.pinMode(1, LOW);       // Use bit-write mode to set the current pin to be an output
-  iochip.pinMode(3, LOW);       // Use bit-write mode to set the current pin to be an output
+  iochip.pinMode(1, OUTPUT);       // Use bit-write mode to set the current pin to be an output
+  iochip.pinMode(3, OUTPUT);       // Use bit-write mode to set the current pin to be an output
   
   iochip.byteWrite(IODIRB, 0x00); //Use byte-write to set all 8 bits of IO Direction register for portB to outputs
 }

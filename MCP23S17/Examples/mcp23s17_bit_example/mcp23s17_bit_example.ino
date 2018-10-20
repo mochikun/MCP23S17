@@ -37,10 +37,10 @@ void setup() {
   inputchip.begin();
   outputchip.begin();
   for (int i = 1; i <= 16; i++) {    // Since we are only workign with one bit at a time, use a loop to take action each pin (0-15)
-    inputchip.pinMode(i, HIGH);      // Use bit-write mode to set all of the current pin on inputchip to be inputs
+    inputchip.pinMode(i, INPUT);      // Use bit-write mode to set all of the current pin on inputchip to be inputs
     inputchip.pullupMode(i, HIGH);   // Use bit-write mode to Turn on the internal pull-up resistor for the current pin
     inputchip.inputInvert(i, HIGH);  // Use bit-write mode to invert the input so that logic 0 is read as HIGH
-    outputchip.pinMode(i, LOW);      // Use bit-write mode to Set all of the current pin on outputchip to be an output
+    outputchip.pinMode(i, OUTPUT);      // Use bit-write mode to Set all of the current pin on outputchip to be an output
   }
 }
 
